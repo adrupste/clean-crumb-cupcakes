@@ -145,9 +145,12 @@ nav a {
 
 /* ABOUT SECTION ---------------------------------------------- */
 
+.about {
+    margin-top: 1rem; 
+}
 .about h3 {
     text-align: center;
-    padding: 1rem;
+    padding: 1rem; 
 }
 
 .about-contents {
