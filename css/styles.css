@@ -1,0 +1,254 @@
+
+/* Variables, Defaults, Main/Body */
+
+:root {
+    --darkest-color: rgb(78, 31, 31);
+    --dark-color: rgb(74, 42, 42);
+    --light-color: rgb(132, 91, 91);
+    --light-type: #f5f5f5; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    max-width: 75rem; 
+    margin: 0 auto;
+    background-color: #f6e4c4; 
+}
+
+/* HEADER ---------------------------------------------- */
+
+h1 {
+    background-color: var(--darkest-color);
+    text-align: center; 
+    padding: 1rem;
+    color: var(--light-type);
+}
+
+/* NAVIGATION ------------------------------------------ */
+
+nav {
+    background-color: var(--dark-color);
+    display: flex; 
+    justify-content: end;
+    padding: 0.625rem;  
+}
+
+nav a {
+    text-decoration: none; 
+    color: var(--light-type); 
+}
+
+#menu li:first-child {
+    display: none; 
+}
+
+#menu {
+    list-style-type: none;
+    display: flex;
+    gap: 1.25rem;
+}
+
+#menu-toggle {
+    display: none;
+    color: white;  
+}
+
+#menu.active {
+    display: flex; 
+}
+
+
+/* HERO SECTION ----------------------------------------- */
+
+.hero {
+    background-image: url(../images/coffee-hero.jpg);
+    min-height: clamp(20rem, 60vw, 30rem); 
+    background-size: cover; 
+    background-position: center; 
+    color: var(--light-type);
+    display: flex; 
+    flex-direction: column; 
+    justify-content: top; 
+    align-items: right; 
+}
+
+.hero h2, .hero p {
+    margin: 2rem;  
+}
+
+/* MENU GALLERY ----------------------------------------------- */
+
+.menu-gallery h3 {
+    text-align: center;
+    padding: 0.625rem; 
+}
+
+.menu-gallery-images {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-gap: 1rem; 
+}
+
+.menu-gallery-images img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    border-radius: 0.3125rem;  
+}
+
+.menu-gallery-images div {
+    padding: 0.625rem;
+    text-align: center;  
+}
+
+/* ABOUT SECTION ---------------------------------------------- */
+
+.about h3 {
+    text-align: center;
+    padding: 1rem;
+}
+
+.about-contents {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    max-width: 50rem;
+    margin: auto;      
+}
+
+.about-contents img {
+    max-width: 20rem;
+    width: 100%;
+    border-radius: 0.3125rem;
+    margin-right: 1.25rem;    
+}
+
+
+/* LOCATION SECTION ------------------------------------------- */
+
+.location h3 {
+    text-align: center; 
+    padding: 1rem; 
+}
+
+.location-contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.location-contents div {
+    max-width: 35rem; 
+    margin: 0.625rem;
+}
+
+.location-contents img {
+    max-width: 35rem;
+    width: 100%;
+    border-radius: 0.3125rem; 
+}
+
+
+
+/* --------------------- MEDIA QUERIES --------------------------*/
+
+
+/* Smaller Screens - 1024px */
+@media screen and (max-width: 64em) {
+
+    /* BODY */
+
+    .wrapper {
+        width: 100%; 
+    }
+
+}
+
+/* Tablet - 768px */
+@media screen and (max-width: 48em) {
+
+    /* HERO */
+    .hero h2 {
+        font-size: 1.625rem; 
+    }
+
+    /* MENU GALLERY */
+    .menu-gallery-images {
+    grid-template-columns: 1fr 1fr;
+    }
+
+    /* ABOUT US */
+
+    .about h3 {
+        padding-top: 2rem; 
+    }
+    .about-contents {
+        flex-direction: column; 
+    }
+
+    .about-contents img, p {
+        margin: 0.625rem; 
+
+    }
+
+    /* LOCATION */
+
+    .location-contents {
+        flex-direction: column;
+        text-align: center;  
+    }
+    
+}
+
+/* Mobile - 480px */
+@media screen and (max-width: 30em) {
+
+    /* NAVIGATION */
+    #menu-toggle {
+        display: block;
+        background-color: var(--dark-color);
+        border: none;  
+    }
+
+    #menu li:first-child {
+        display: flex;
+        justify-content: right; 
+    }
+    #menu {
+        display: none;
+        flex-direction: column; 
+        position: absolute;
+        top: 1.875rem;
+        background-color: var(--dark-color);
+        padding: 1.25rem; 
+        border-radius: 0.625rem;  
+    }
+
+    /* HERO */
+    .hero h2 {
+        font-size: 1.25rem; 
+    }
+
+    /* MENU GALLERY */
+    .menu-gallery-images {
+        grid-template-columns: 1fr; 
+    }
+
+    /* ABOUT */
+    .about-contents {
+        flex-direction: column; 
+    }
+
+
+
+}
+
