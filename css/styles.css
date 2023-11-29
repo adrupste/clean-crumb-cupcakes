@@ -12,10 +12,10 @@
 }
 
 :root {
-    --darkest-color: rgb(78, 31, 31);
-    --dark-color: rgb(74, 42, 42);
-    --light-color: rgb(132, 91, 91);
-    --light-type: rgb(245, 245, 245); 
+    --dark-brown: rgb(74, 42, 42);
+    --light-type: rgb(245, 245, 245);
+    --light-pink: rgb(255, 194, 204);
+    --dark-pink: rgb(240, 117, 146);  
 }
 
 * {
@@ -28,14 +28,15 @@
 
 body {
     font-family: 'AR One Sans';
-    background-image: url(../images/coffee-beans.jpg);
-    background-size: cover; 
+    background-color: whitesmoke;
+    background-image: url(../images/pink-background.jpg);
 }
 
 .wrapper {
-    max-width: 75rem; 
+    max-width: 80rem; 
     margin: 0 auto;
-    background-color: rgb(246, 228, 196); 
+    background-color: var(--light-pink);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 h3 {
@@ -45,28 +46,35 @@ h3 {
 
 /* HEADER ---------------------------------------------- */
 
-h1 {
-    background-color: var(--darkest-color);
-    text-align: center; 
-    padding: 1rem;
-    color: var(--light-type);
-    font-family: satisfy; 
-    font-size: clamp(1.85rem, 7vw, 3.5rem);  
+header {
+    background-color: white; 
+}
+.hero-logo {
+    max-width: 15rem; 
+    margin: auto;
+    padding: 1rem;  
+
 }
 
 /* NAVIGATION ------------------------------------------ */
 
 nav {
-    background-color: var(--dark-color);
+    background-color: var(--dark-brown);
     display: flex; 
-    justify-content: end;
+    justify-content: center;
     padding: 0.625rem;  
 }
 
 nav a {
-    text-decoration: none; 
+    text-decoration: none;
+    padding: 2rem;  
     color: var(--light-type);
-    font-size: var(--body-text); 
+    font-size: var(--body-text);
+    text-transform: uppercase;  
+}
+
+nav a:hover {
+    color: var(--light-pink);
 }
 
 #menu li:first-child {
@@ -92,110 +100,182 @@ nav a {
 /* HERO SECTION ----------------------------------------- */
 
 .hero {
-    background-image: url(../images/coffee-hero.jpg);
+    background-image: url(../images/cupcake-hero.jpg);
     min-height: clamp(20rem, 60vw, 30rem); 
     background-size: cover; 
     background-position: center; 
-    color: var(--light-type);
     display: flex; 
-    flex-direction: column; 
+    flex-direction: column;   
 }
 
-.hero h2, .hero p {
-    margin: 1.5rem;  
+.hero-text {
+    background-color: rgba(245, 245, 245, 0.502);
+    max-width: 55%;
+    border-radius: .5rem;
+    margin-top: 3rem;
+    text-align: right; 
 }
 
-.hero h2 {
+.hero-text h2, .hero-text p {
+    margin: 1.5rem; 
+    text-align: right;
+}
+
+.hero-text h2 {
     font-size: var(--h2);
+    font-family: Satisfy; 
 }
 
-.hero p {
+.hero-text p {
     font-size: var(--body-text);
 }
 
+.hero-text button {
+    padding: 0.625rem; 
+    margin-top: 0.625rem;
+    border-radius: 2rem;
+    background-color: var(--dark-pink); 
+    color: rgb(245, 245, 245); 
+    margin-right: 1.25rem; 
+    margin-bottom: 1.25rem; 
+}
 
-/* MENU GALLERY ----------------------------------------------- */
+.hero-text button:hover {
+    background-color: var(--light-pink);
+    color: var(--dark-pink);
+}
 
-.menu-gallery h3 {
+
+/* SPECIALTY CUPCAKES ----------------------------------------------- */
+
+.specialty-cupcakes h3 {
     text-align: center;
     padding: 0.625rem;
 }
 
-.menu-gallery h4 {
+.specialty-cupcakes h4 {
     font-size: var(--h4);
 }
 
-.menu-gallery-images {
+.specialty-cupcakes-images {
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr; 
     grid-gap: 1rem; 
 }
 
-.menu-gallery-images img {
-    width: 100%; 
-    height: 100%; 
+.specialty-cupcakes-images img {
+    width: 80%; 
     object-fit: cover;
     border-radius: 0.3125rem;  
 }
 
-.menu-gallery-images div {
+.specialty-cupcakes-images div {
     padding: 0.625rem;
-    text-align: center;  
+    text-align: center; 
+    background-color: whitesmoke; 
+    margin: 0.625rem;
+    border-radius: 1rem;   
 }
 
-/* ABOUT SECTION ---------------------------------------------- */
+.specialty-cupcakes-images div button {
+    padding: 0.625rem; 
+    margin-top: 0.625rem;
+    border-radius: 2rem;
+    background-color: var(--dark-brown); 
+    color: rgb(245, 245, 245); 
+}
 
-.about {
+.specialty-cupcakes-images div button:hover {
+    color: var(--dark-pink);
+}
+
+/* GALLERY SECTION ---------------------------------------------- */
+
+.gallery {
     margin-top: 1rem; 
 }
-.about h3 {
+
+.gallery h3, p {
     text-align: center;
-    padding: 1rem; 
 }
 
-.about-contents {
-    display: flex; 
-    align-items: center;
+.gallery-contents {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    column-gap: 1rem; 
+    row-gap: 1rem; 
     justify-content: center;
-    max-width: 50rem;
+    max-width: 70rem;
     margin: auto;   
-}
-
-.about-contents img {
-    max-width: 20rem;
-    width: 100%;
-    border-radius: 0.3125rem;
-    margin-right: 1.25rem;    
-}
-
-.about-contents p {
-    font-size: var(--body-text);
-}
-
-
-/* LOCATION SECTION ------------------------------------------- */
-
-.location h3 {
-    text-align: center; 
+    margin-top: 1rem; 
+    background-color: whitesmoke;
     padding: 1rem; 
+    border-radius: 0.625rem;
 }
 
-.location-contents {
-    display: flex;
+.gallery-contents img {
+    max-width: 20rem;
+    width: 100%; 
+    border-radius: 0.3rem;   
+}
+
+
+/* FOOTER ---------------------------------------------------------------------------------- */
+
+footer {
+    background-color: var(--dark-brown);
     justify-content: center;
-    align-items: center;  
+    list-style: none; 
+    display: flex; 
+    padding: 1.25rem;
+    font-size: 0.75rem;  
 }
 
-.location-contents div {
-    max-width: 35rem; 
-    margin: 0.625rem;
-    font-size: var(--body-text);
+/* Navigation */
+
+.footer-nav {
+    border-right: 0.125rem solid var(--light-pink);
+    padding-right: 1.25rem;
 }
 
-.location-contents img {
-    max-width: 35rem;
-    width: 100%;
-    border-radius: 0.3125rem; 
+.footer-nav ol li {
+    list-style: none; 
+    text-align: right; 
+}
+
+.footer-nav ol li a {
+    color:var(--light-type);
+    text-decoration: none;
+    text-transform: uppercase; 
+}
+
+.footer-nav ol li a:hover {
+    color:var(--light-pink);
+}
+
+/* Address */
+
+footer p {
+    color: var(--light-type);
+    max-width: 11rem; 
+}
+
+.footer-address {
+    text-align: center; 
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    border-right: 0.125rem solid var(--light-pink); 
+}
+
+/* Social Media Icons */
+
+.footer-socials {
+   padding-left: 1.25rem;
+}
+
+.footer-socials img {
+    max-width: 1.5rem;
+    margin-right: 0.625rem;  
 }
 
 
@@ -234,34 +314,53 @@ nav a {
         --h2: 2.2rem;
         --h3: 1.75rem;
         --h4: 1.125;
-        --body-text: 1.0625rem; 
+        --body-text: 1rem; 
     }
 
-    /* MENU GALLERY */
-    .menu-gallery-images {
+    /* NAVIGATION */
+
+    nav a {
+        padding: 0.625rem; 
+    }
+
+
+    /* HERO */
+
+    .hero-text {
+        background-color: rgba(245, 245, 245, 0.74);
+        max-width: 100%;
+        border-radius: 0; 
+        text-align: center;  
+    }
+
+    .hero-text h2, .hero-text p {
+        text-align: center; 
+        margin-top: 1rem; 
+    }
+
+    .hero-text button {
+        margin: 0; 
+        margin-bottom: 1rem;
+    }
+
+    /* SPECIALTY CUPCAKES */
+    .specialty-cupcakes-images {
         grid-template-columns: 1fr 1fr;
     }
 
-    /* ABOUT US */
+    /* GALLERY */
 
-    .about h3 {
+    .gallery h3 {
         padding-top: 2rem; 
     }
-    .about-contents {
+    .gallery-contents {
         flex-direction: column; 
     }
 
-    .about-contents img, p {
+    .gallery-contents img, p {
         margin: 0.625rem; 
     }
-
-    /* LOCATION */
-
-    .location-contents {
-        flex-direction: column;
-        text-align: center;  
-    }
-    
+   
 }
 
 /* Mobile - 480px */
@@ -271,13 +370,24 @@ nav a {
         --h2: 2rem;
         --h3: 1.5rem;
         --h4: 1.0625rem;
-        --body-text: 1rem; 
+        --body-text: 0.85rem; 
+    }
+
+    /* HERO */
+
+    .hero-text {
+        margin-top: 2rem; 
     }
 
     /* NAVIGATION */
+
+    nav { 
+        justify-content: right; 
+    }
+
     #menu-toggle {
         display: block;
-        background-color: var(--dark-color);
+        background-color: var(--dark-brown);
         border: none;  
     }
 
@@ -289,49 +399,48 @@ nav a {
         display: none;
         flex-direction: column; 
         position: absolute;
-        top: 1.875rem;
-        background-color: var(--dark-color);
-        padding: 1.25rem; 
+        background-color: var(--dark-brown);
+        padding: 1rem; 
         border-radius: 0.625rem;  
     }
 
-    /* HERO */
-    .hero h2, .hero p {
-        margin: 1rem;  
-    }
-
-    .hero h2 {
-        text-align: center; 
-    }
-
-    .hero p {
-        max-width: 24ch; 
-    }
-
-    /* MENU GALLERY */
-    .menu-gallery-images {
+    /* SPECIALTY CUPCAKES */
+    .specialty-cupcakes-images {
         grid-template-columns: 1fr; 
     }
 
-    /* ABOUT */
-    .about-contents {
+    /* GALLERY */
+    .gallery-contents {
         flex-direction: column; 
     }
 
+    /* FOOTER */
+    footer {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .footer-nav {
+        display: none;  
+    }
+
+    .footer-address {
+        border-right: none; 
+    }
+    .footer-socials {
+        text-align: center; 
+        padding:0;
+        margin:0;
+    }
+
+    .footer-socials img {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 /* Small Mobile - 320px */
 @media screen and (max-width: 20em) {
 
-    /* HERO */
-    .hero h2, .hero p {
-        margin: .75rem; 
-    }
-     .hero h2 {
-        font-size: 1.65rem;
-     }
 
-     .hero p {
-        max-width: 20ch;  
-     }
 }
