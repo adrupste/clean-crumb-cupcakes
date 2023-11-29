@@ -28,15 +28,16 @@
 
 body {
     font-family: 'AR One Sans';
-    background-color: whitesmoke;
     background-image: url(../images/pink-background.jpg);
+    background-size: cover; 
+    background-position: center; 
 }
 
 .wrapper {
     max-width: 80rem; 
     margin:  auto;
     background-color: var(--light-pink);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 0.375rem 1.25rem 0 rgba(0, 0, 0, 0.19);
 }
 
 h3 {
@@ -49,6 +50,7 @@ h3 {
 header {
     background-color: white; 
 }
+
 .hero-logo {
     max-width: 15rem; 
     margin: auto;
@@ -89,7 +91,8 @@ nav a:hover {
 
 #menu-toggle {
     display: none;
-    color: white;  
+    color: white;
+    font-size: 2rem;  
 }
 
 #menu.active {
@@ -137,7 +140,9 @@ nav a:hover {
     background-color: var(--dark-pink); 
     color: rgb(245, 245, 245); 
     margin-right: 1.25rem; 
-    margin-bottom: 1.25rem; 
+    margin-bottom: 1.25rem;
+    font-size: 1rem; 
+    text-transform: uppercase;  
 }
 
 .hero-text button:hover {
@@ -164,17 +169,17 @@ nav a:hover {
 }
 
 .specialty-cupcakes-images img {
-    width: 80%; 
+    width: 100%; 
     object-fit: cover;
-    border-radius: 0.3125rem;  
+    border-radius: 1rem 1rem 0 0;  
 }
 
 .specialty-cupcakes-images div {
-    padding: 0.625rem;
     text-align: center; 
     background-color: whitesmoke; 
     margin: 0.625rem;
-    border-radius: 1rem;   
+    border-radius: 1rem; 
+    padding-bottom: 1rem;  
 }
 
 .specialty-cupcakes-images div button {
@@ -183,6 +188,8 @@ nav a:hover {
     border-radius: 2rem;
     background-color: var(--dark-brown); 
     color: rgb(245, 245, 245); 
+    font-size: 1rem;
+    text-transform: uppercase; 
 }
 
 .specialty-cupcakes-images div button:hover {
@@ -313,24 +320,16 @@ footer p {
     :root {
         --h2: 2.2rem;
         --h3: 1.75rem;
-        --h4: 1.125;
+        --h4: 1.125rem;
         --body-text: 1rem; 
     }
 
-    body {
-        background-image: none; 
-    }
-
-    .wrapper {
-        box-shadow: none; 
-    }
 
     /* NAVIGATION */
 
     nav a {
         padding: 0.625rem; 
     }
-
 
     /* HERO */
 
@@ -375,7 +374,6 @@ footer p {
         --h2: 2rem;
         --h3: 1.5rem;
         --h4: 1.0625rem;
-        --body-text: 0.85rem; 
     }
 
     /* HERO */
@@ -421,15 +419,7 @@ footer p {
 
     .gallery-contents {
         grid-template-columns: 1fr 1fr; 
-        column-gap: 1rem; 
-        row-gap: 1rem; 
-        justify-content: center;
-        max-width: 70rem;
-        margin: auto;   
-        margin-top: 1rem; 
-        background-color: whitesmoke;
-        padding: 1rem; 
-        border-radius: 0.625rem;
+
     }
 
     /* FOOTER */
