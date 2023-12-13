@@ -5,18 +5,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 :root {
-    --h2: 2.4rem;
-    --h3: 2rem;
-    --h4: 1.5rem;
+    --page-headers: 2.4rem;
+    --section-headers: 2rem;
+    --subheading: 1.5rem;
     --body-text: 1.125rem; 
-}
-
-:root {
-    --dark-brown: rgb(74, 42, 42);
-    --light-type: rgb(245, 245, 245);
-    --light-pink: rgb(255, 194, 204);
-    --dark-pink: rgb(240, 117, 146);
-    --background-white: rgb(245, 245, 245); 
+    --nav-background: rgb(74, 42, 42);
+    --nav-button-type: rgb(245, 245, 245);
+    --wrapper-background: rgb(255, 194, 204);
+    --main-button: rgb(240, 117, 146);
+    --images-background: rgb(245, 245, 245);
+    --box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 0.375rem 1.25rem 0 rgba(0, 0, 0, 0.19);   
 }
 
 * {
@@ -28,7 +26,7 @@
 /* BODY ----------------------------------------------- */
 
 body {
-    font-family: 'AR One Sans';
+    font-family: 'AR One Sans', Arial, Helvetica, sans-serif;
     background-image: url(../images/pink-background.jpg);
     background-size: cover; 
     background-position: center; 
@@ -37,13 +35,13 @@ body {
 .wrapper {
     max-width: 80rem; 
     margin:  auto;
-    background-color: var(--light-pink);
-    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 0.375rem 1.25rem 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--wrapper-background);
+    box-shadow: var(--box-shadow);
 }
 
 h3 {
-    font-family: satisfy;
-    font-size: var(--h3);
+    font-family: satisfy, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: var(--section-headers);
 }
 
 /* HEADER ---------------------------------------------- */
@@ -53,7 +51,7 @@ header {
 }
 
 .hero-logo {
-    max-width: 15rem; 
+    max-width: 18rem; 
     margin: auto;
     padding: 1rem;  
 
@@ -62,7 +60,7 @@ header {
 /* NAVIGATION ------------------------------------------ */
 
 nav {
-    background-color: var(--dark-brown);
+    background-color: var(--nav-background);
     display: flex; 
     justify-content: center;
     padding: 0.625rem;  
@@ -71,13 +69,13 @@ nav {
 nav a {
     text-decoration: none;
     padding: 2rem;  
-    color: var(--light-type);
+    color: var(--nav-button-type);
     font-size: var(--body-text);
     text-transform: uppercase;  
 }
 
 nav a:hover {
-    color: var(--light-pink);
+    color: var(--wrapper-background);
 }
 
 #menu li:first-child {
@@ -99,7 +97,6 @@ nav a:hover {
 #menu.active {
     display: flex; 
 }
-
 
 /* HERO SECTION ----------------------------------------- */
 
@@ -125,9 +122,9 @@ nav a:hover {
     text-align: right;
 }
 
-.hero-text h2 {
-    font-size: var(--h2);
-    font-family: Satisfy; 
+.hero-text h2, .gluten-free-cupcakes h2 {
+    font-size: var(--page-headers);
+    font-family: Satisfy, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode'; 
 }
 
 .hero-text p {
@@ -138,8 +135,8 @@ nav a:hover {
     padding: 0.625rem; 
     margin-top: 0.625rem;
     border-radius: 2rem;
-    background-color: var(--dark-pink); 
-    color: var(--light-type); 
+    background-color: var(--main-button); 
+    color: var(--nav-button-type); 
     margin-right: 1.25rem; 
     margin-bottom: 1.25rem;
     font-size: 1rem; 
@@ -147,21 +144,20 @@ nav a:hover {
 }
 
 .hero-text button:hover {
-    background-color: var(--light-pink);
-    color: var(--dark-pink);
+    background-color: var(--wrapper-background);
+    color: var(--main-button);
 }
-
 
 /* SPECIALTY CUPCAKES ----------------------------------------------- */
 
 .specialty-cupcakes h3 {
     text-align: center;
     padding: 0.625rem;
-    font-size: var(--h3);
+    font-size: var(--section-headers);
 }
 
 .specialty-cupcakes h4 {
-    font-size: var(--h4);
+    font-size: var(--subheading);
 }
 
 .specialty-cupcakes-images {
@@ -178,37 +174,38 @@ nav a:hover {
 
 .specialty-cupcakes-images div {
     text-align: center; 
-    background-color: var(--background-white);
+    background-color: var(--images-background);
     margin: 0.625rem;
     border-radius: 1rem; 
-    padding-bottom: 1rem;  
+    padding-bottom: 1rem;
+    box-shadow: var(--box-shadow); 
 }
 
-.specialty-cupcakes-images div button {
+button {
     padding: 0.625rem; 
     margin-top: 0.625rem;
     border-radius: 2rem;
-    background-color: var(--dark-brown); 
-    color: var(--light-type); 
+    background-color: var(--nav-background); 
+    color: var(--nav-button-type); 
     font-size: 1rem;
     text-transform: uppercase; 
 }
 
-.specialty-cupcakes-images div button:hover {
-    color: var(--dark-pink);
+button:hover {
+    color: var(--main-button);
 }
 
 /* GALLERY SECTION ---------------------------------------------- */
 
-.gallery {
+.gallery, .product-gallery {
     margin-top: 1rem; 
 }
 
-.gallery h3, p {
+.gallery h3, p, .product-gallery h3 {
     text-align: center;
 }
 
-.gallery-contents {
+.gallery-contents, .gluten-gallery-contents {
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr; 
     column-gap: 1rem; 
@@ -217,34 +214,34 @@ nav a:hover {
     max-width: 70rem;
     margin: auto;   
     margin-top: 1rem; 
-    background-color: var(--background-white);
+    background-color: var(--images-background);
     padding: 1rem; 
     border-radius: 0.625rem 0.625rem 0 0;
+    box-shadow: var(--box-shadow);
 }
 
-.gallery-contents img {
+.gallery-contents img, .gluten-gallery-contents img {
     max-width: 20rem;
     width: 100%; 
     border-radius: 0.3rem;   
 }
 
-
 /* FOOTER ---------------------------------------------------------------------------------- */
 
 footer {
-    background-color: var(--dark-brown);
+    background-color: var(--nav-background);
     justify-content: center;
     list-style: none; 
     display: flex; 
-    padding: 1.25rem;
-    font-size: 0.75rem;  
+    padding: 1.5rem;
+    font-size: 0.875rem;  
 }
 
 /* Navigation */
 
 .footer-nav {
-    border-right: 0.125rem solid var(--light-pink);
-    padding-right: 1.25rem;
+    border-right: 0.125rem solid var(--wrapper-background);
+    padding-right: 1.5rem;
 }
 
 .footer-nav ol li {
@@ -253,44 +250,103 @@ footer {
 }
 
 .footer-nav ol li a {
-    color:var(--light-type);
+    color:var(--nav-button-type);
     text-decoration: none;
     text-transform: uppercase; 
 }
 
 .footer-nav ol li a:hover {
-    color:var(--light-pink);
+    color:var(--wrapper-background);
 }
 
 /* Address */
 
 footer p {
-    color: var(--light-type);
-    max-width: 11rem; 
+    color: var(--nav-button-type);
+    max-width: 15rem; 
 }
 
 .footer-address {
     text-align: center; 
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    border-right: 0.125rem solid var(--light-pink); 
+    padding: 0 1.5rem 0 1.5rem;
+    border-right: 0.125rem solid var(--wrapper-background); 
 }
 
 /* Social Media Icons */
 
 .footer-socials {
-   padding-left: 1.25rem;
+   padding-left: 1.5rem;
 }
 
 .footer-socials img {
     max-width: 1.5rem;
-    margin-right: 0.625rem;  
+    margin-right: 0.5rem;  
 }
 
+/* --------------------- PRODUCTS PAGE & ABOUT PAGE ---------------------------------------------------------------------*/
 
+.products, .about-us-section {
+    background-color: var(--images-background);  
+}
 
-/* --------------------- MEDIA QUERIES --------------------------*/
+.gluten-header-1 {
+    display: none;
+}
+.gluten-free-cupcakes, .about-us {
+    display: flex;
+    margin: auto; 
+    padding: 1rem; 
+}
 
+.gluten-free-cupcakes img, .about-us img {
+    border-radius: 1rem; 
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 0.375rem 1.25rem 0 rgba(0, 0, 0, 0.19);
+}
+
+.gluten-free-cupcakes p, .about-us p {
+    text-align: left;
+    padding: 0.625rem 0 0.625rem 0; 
+}
+
+.gluten-free-cupcakes div, .about-us div {
+    padding: 1rem; 
+}
+
+/* Drop Downs */
+
+select {
+    padding: 0.5rem; 
+    border-radius: .125rem; 
+    margin: 0.5rem;
+    width: 50%;
+    font-size: 1rem;
+    background-color: #fff;
+    border: 0.0625rem solid rgb(203, 207, 210);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+/* About Page */ 
+
+.about-hero {
+    background-image: url(../images/about-hero.jpg);
+    min-height: clamp(20rem, 60vw, 30rem); 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    flex-direction: column;   
+}
+
+.about-us-section h3 {
+    text-align: center; 
+    padding-top: 1rem; 
+}
+
+.about-us p {
+    padding-left: 1rem; 
+}
+
+/* --------------------- MEDIA QUERIES -----------------------------------------------------------------------*/
 
 /* Smaller Screens - 1200px */
 @media screen and (max-width: 75em) {
@@ -314,18 +370,35 @@ footer p {
     :root {
         --h4: 1.2rem; 
     }
+
+    /* PRODUCTS & ABOUT */
+    .gluten-free-cupcakes img {
+        max-width: 15rem; 
+    }
+    
+    .gluten-free-cupcakes p {
+        padding-top: 0.5rem;  
+    }
+
+    .about-us {
+        flex-direction: column;  
+        align-items: center; 
+    }
+    
+     .about-us img{
+        max-width: 100%; 
+     }
 }
 
 /* Tablet - 768px */
 @media screen and (max-width: 48em) {
 
     :root {
-        --h2: 2.2rem;
-        --h3: 1.75rem;
+        --page-headers: 2.2rem;
+        --section-headers: 1.75rem;
         --h4: 1.125rem;
         --body-text: 1rem; 
     }
-
 
     /* NAVIGATION */
 
@@ -363,18 +436,72 @@ footer p {
         padding-top: 2rem; 
     }
     .gallery-contents {
-        flex-direction: column;
         max-width: 100%;  
     }
+}
+
+/* Large Mobile - 600px */
+@media screen and (max-width: 37.5em) {
+
+    /* PRODUCTS */
+
+    .gluten-header-1 {
+        display: block;
+        text-align: center; 
+        padding-top: 1rem;
+    }
+
+    .gluten-header-2 {
+        display: none; 
+    }
+
+    .gluten-free-cupcakes {
+        flex-direction: column;  
+        align-items: center; 
+        text-align: center; 
+    }
+
+    .gluten-free-cupcakes img {
+        max-width: 100%; 
+    }
    
+    .gluten-gallery-contents {
+        grid-template-columns: 1fr 1fr 1fr; 
+    }
+
+    /* FOOTER */
+
+    footer { 
+        flex-direction: column; 
+        align-items: center;
+     }
+    
+    .footer-nav {
+        display: none;  
+    }
+    
+    .footer-address {
+        border-right: none; 
+    }
+
+    .footer-socials {
+        text-align: center; 
+        padding:0;
+        margin:0;
+    }
+    
+    .footer-socials img {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 /* Mobile - 480px */
 @media screen and (max-width: 30em) {
 
     :root {
-        --h2: 2rem;
-        --h3: 1.5rem;
+        --page-headers: 2rem;
+        --section-headers: 1.5rem;
         --h4: 1.0625rem;
     }
 
@@ -392,7 +519,7 @@ footer p {
 
     #menu-toggle {
         display: block;
-        background-color: var(--dark-brown);
+        background-color: var(--nav-background);
         border: none;  
     }
 
@@ -404,7 +531,7 @@ footer p {
         display: none;
         flex-direction: column; 
         position: absolute;
-        background-color: var(--dark-brown);
+        background-color: var(--nav-background);
         padding: 1rem; 
         border-radius: 0.625rem;  
     }
@@ -416,37 +543,9 @@ footer p {
     }
 
     /* GALLERY */
-    .gallery-contents {
-        flex-direction: column; 
-    }
 
-    .gallery-contents {
+    .gallery-contents, .gluten-gallery-contents {
         grid-template-columns: 1fr 1fr; 
-
     }
 
-    /* FOOTER */
-
-    footer {
-        flex-direction: column; 
-        align-items: center;
-    }
-
-    .footer-nav {
-        display: none;  
-    }
-
-    .footer-address {
-        border-right: none; 
-    }
-    .footer-socials {
-        text-align: center; 
-        padding:0;
-        margin:0;
-    }
-
-    .footer-socials img {
-        margin: 0;
-        padding: 0;
-    }
 }
